@@ -129,6 +129,6 @@ this.socket = io("http://localhost:3000", { autoConnect: false });
 
 ---
 
-## 🐝 Licencia
+## 🐝 notas
 
-Este proyecto está bajo la **MIT License** – puedes usarlo libremente para fines personales y comerciales. 🚀
+En caso de quere inicializar el proyecto con los demas sistemas , primero comienza inicializando el sistema de backend, despues el sistema web y por ultimo el sistema de nodejs con el socket.io.
