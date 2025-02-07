@@ -1,0 +1,50 @@
+<app-login-widget 
+  *ngIf="mostrarLogin" 
+  (irARegistro)="cambiarARegistro()">
+</app-login-widget>
+
+<app-register-widget 
+  *ngIf="mostrarRegistro" 
+  (irALogin)="cambiarALogin()">
+</app-register-widget>
+
+<app-edit-widget 
+  *ngIf="mostrarEdit"
+  [isVisible]="mostrarEdit" 
+  [colaborador]="colaboradorSeleccionado"
+  [nuevoColaborador]="nuevoColaborador"
+  (irEdit)="cerrarEditWidget()">
+</app-edit-widget>
+
+<div class="toast-container position-fixed top-0 end-0 p-3">
+  <div *ngIf="mostrarNotificacion" class="toast show bg-warning text-dark" role="alert">
+    <div class="toast-header">
+      <strong class="me-auto">Notificación</strong>
+      <button type="button" class="btn-close" (click)="cerrarNotificacion()"></button>
+    </div>
+    <div class="toast-body">
+      Se ha detectado un cambio en los colaboradores.
+    </div>
+  </div>
+</div>
+
+<div class="contenedor-cards">
+  <div class="main">
+    <div class="divsI">
+      <h1>Listado de colaboradores</h1>
+    </div>
+    <div class="divsD">
+      <button (click)="mostrarAgregarWidget()">Agregar colaborador</button>
+    </div>
+  </div>
+
+  <div *ngIf="colaboradores.length === 0" class="alert alert-warning text-center d-flex align-items-center justify-content-center" role="alert">
+    <span class="me-2">📌</span> <strong>No hay colaboradores aún.</strong>
+  </div>
+  
+
+  <app-card *ngFor="let colaborador of colaboradores" 
+    [colaborador]="colaborador" 
+    (editar)="mostraEditWidget(colaborador)">
+  </app-card>
+</div>

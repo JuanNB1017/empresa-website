@@ -1,0 +1,71 @@
+.navbar {
+    background: linear-gradient(220.55deg, #7B00F7 0%, #00C3FF 100%);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+/* Logotipo */
+.navbar-brand {
+    width: 50px;
+    height: auto;
+    display: flex;
+    align-items: center;
+}
+
+.navbar-brand img {
+    width: 100%;
+    border-radius: 8px;
+}
+
+/* Contenedor de los enlaces */
+.navbar-nav {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+/* Estilo de los enlaces */
+.navbar-nav .nav-link {
+    font-size: 18px;
+    font-weight: 500;
+    color: #faf0ff;
+    text-decoration: none;
+    padding: 10px 15px;
+    transition: all 0.3s ease;
+    border-radius: 8px;
+}
+
+/* Hover en los enlaces */
+.navbar-nav .nav-link:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: scale(1.1);
+}
+
+/* Botón de logout */
+.logout {
+    color: rgb(255, 210, 210);
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* Responsividad: Ajuste para pantallas pequeñas */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .navbar-nav {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .navbar-nav .nav-link {
+        display: block;
+        width: 100%;
+    }
+}

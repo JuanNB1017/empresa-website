@@ -1,0 +1,16 @@
+<div class="register-overlay">
+    <div class="register-box">
+        <h2>Registro</h2>
+        <input type="text" [(ngModel)]="name" placeholder="Nombre Completo" />
+        <input type="email" [(ngModel)]="email" placeholder="Correo" />
+        <input type="password" [(ngModel)]="password" placeholder="Contraseña" />
+        <button (click)="registrarse()">Registrarse</button>
+        <br><br>
+        <div *ngIf="errorMessage" class="alert alert-danger text-center d-flex align-items-center justify-content-center" role="alert">
+            ❌ <strong>{{ errorMessage }}</strong>
+        </div>         
+        <hr> 
+        <p>¿Ya tienes cuenta?</p>
+        <button class="link-button" (click)="volverALogin()">Iniciar Sesión</button>
+    </div>
+</div>

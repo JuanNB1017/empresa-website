@@ -1,0 +1,15 @@
+<div class="login-overlay" *ngIf="isVisible">
+<div class="login-box">
+    <br><br>
+    <h2>Iniciar Sesión</h2>
+    <input type="email" [(ngModel)]="email" placeholder="Correo" />
+    <input type="password" [(ngModel)]="password" placeholder="Contraseña" />
+    <button (click)="iniciarSesion()">Entrar</button>
+    <br>
+    <div *ngIf="errorMessage" class="alert alert-danger text-center" role="alert">
+        ❌ <strong>{{ errorMessage }}</strong>
+    </div>
+    <p>¿No tienes cuenta?</p>
+    <button class="link-button" (click)="mostrarRegistro()">Regístrate</button>
+</div>
+</div>

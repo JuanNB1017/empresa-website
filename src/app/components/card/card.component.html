@@ -1,0 +1,29 @@
+<div class="card-container">
+  <!-- Imagen del colaborador -->
+  <div class="card-image">
+    <img [src]="getFoto()" alt="Foto de colaborador">
+  </div>
+
+  <!-- Información del colaborador -->
+  <div class="card-info">
+    <div>
+      <p><strong>Nombre:</strong><br> {{ colaborador?.nombre_completo }}</p>
+      <p><strong>Empresa:</strong><br> {{ colaborador?.empresa }}</p>
+      <p><strong>Área:</strong><br> {{ colaborador?.area }}</p>
+    </div>
+    <div>
+      <p><strong>Departamento:</strong><br> {{ colaborador?.departamento }}</p>
+      <p><strong>Estatus:</strong><br> <span [ngClass]="colaborador?.estatus === 'activo' ? 'activo' : 'inactivo'">{{ colaborador?.estatus }}</span></p>
+    </div>
+  </div>
+
+  <!-- Botones de acciones -->
+  <div class="card-actions">
+    <button class="btn eliminar" (click)="eliminar(colaborador.id)">
+      ❌ <br> Eliminar
+    </button>
+    <button class="btn editar" (click)="editarColaborador()">
+      ✏️ <br> Editar Info
+    </button>
+  </div>
+</div>

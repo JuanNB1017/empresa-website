@@ -1,0 +1,29 @@
+<nav class="navbar navbar-expand-lg navbar-light border-bottom">
+    <div class="container">
+        <!-- Imagen / Logo -->
+        <a class="navbar-brand" href="#">
+            <img src="/assets/img/admin.png" >
+        </a>
+
+        <!-- Botón para móviles -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Menú de opciones -->
+        <div class="collapse navbar-collapse justify-content-between" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item px-3"><button class="nav-link" (click)="seleccionarFiltro('all')">Todos</button></li>
+                <li class="nav-item px-3"><button class="nav-link" (click)="seleccionarFiltro('activo')">Activos</button></li>
+                <li class="nav-item px-3"><button class="nav-link" (click)="seleccionarFiltro('inactivo')">Inactivos</button></li>
+            </ul>
+
+            <!-- Sección de usuario -->
+            <ul class="navbar-nav">
+                <!-- <li class="nav-item px-3"><a class="nav-link" href="#">Login</a></li> -->
+                <li class="nav-item px-3"><button class="nav-link text-danger" (click)="cerrarSesion()">Cerrar sesion</button></li>
+            </ul>
+        </div>
+    </div>
+</nav>

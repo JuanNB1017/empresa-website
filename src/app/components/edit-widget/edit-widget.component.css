@@ -1,0 +1,123 @@
+.edit-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.edit-box {
+    background: white;
+    padding: 25px;
+    border-radius: 15px;
+    width: 700px;
+    max-width: 95%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Sección de la imagen */
+.image-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.profile-img {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 8px;
+    border: 2px solid #ddd;
+}
+
+.upload-btn {
+    width: 100%;
+    padding: 6px;
+    font-size: 14px;
+}
+
+/* Sección de Inputs */
+.fields-section {
+    width: 100%;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    font-weight: bold;
+    font-size: 14px;
+    margin-bottom: 4px;
+}
+
+input, select {
+    padding: 8px;
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Botones */
+.button-group {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+}
+
+.btn-closes, .btn-update {
+    width: 130px;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.btn-closes {
+    background: linear-gradient(220.55deg, #ec008c, #fc6767);
+    color: white;
+}
+
+.btn-update {
+    background: linear-gradient(220.55deg, #FF5EEF 0%, #456EFF 100%);
+    color: white;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+    .image-section {
+        width: 100%;
+    }
+
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .button-group {
+        justify-content: center;
+    }
+}

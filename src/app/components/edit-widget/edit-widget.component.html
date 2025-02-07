@@ -1,0 +1,92 @@
+<div class="edit-overlay">
+    <div class="edit-box">
+        <h2>{{ nuevo ? 'Agregar Colaborador' : 'Editar Información' }}</h2>
+        
+        <div class="form-container">
+            <form [formGroup]="editForm">
+                <!-- Sección de Imagen -->
+                <div class="image-section">
+                    <img *ngIf="editForm.get('fotografia')?.value" 
+                         [src]="editForm.get('fotografia')?.value" 
+                         alt="Fotografía actual" 
+                         class="profile-img"/>
+                    <input type="file" (change)="subirImagen($event)" class="upload-btn"/>
+                </div>
+
+                <!-- Sección de Inputs -->
+                <div class="fields-section">
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label>Nombre</label>
+                            <input type="text" formControlName="nombre_completo" placeholder="Nombre Completo" />
+                            <small *ngIf="editForm.get('nombre_completo')?.invalid && editForm.get('nombre_completo')?.touched" class="text-danger">
+                                El nombre es obligatorio.
+                            </small>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Empresa</label>
+                            <input type="text" formControlName="empresa" placeholder="Empresa" />
+                            <small *ngIf="editForm.get('empresa')?.invalid && editForm.get('empresa')?.touched" class="text-danger">
+                                La empresa es obligatoria.
+                            </small>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Área</label>
+                            <input type="text" formControlName="area" placeholder="Área" />
+                            <small *ngIf="editForm.get('area')?.invalid && editForm.get('area')?.touched" class="text-danger">
+                                El área es obligatoria.
+                            </small>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Departamento</label>
+                            <input type="text" formControlName="departamento" placeholder="Departamento" />
+                            <small *ngIf="editForm.get('departamento')?.invalid && editForm.get('departamento')?.touched" class="text-danger">
+                                El departamento es obligatorio.
+                            </small>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Puesto</label>
+                            <input type="text" formControlName="puesto" placeholder="Puesto" />
+                            <small *ngIf="editForm.get('puesto')?.invalid && editForm.get('puesto')?.touched" class="text-danger">
+                                El puesto es obligatorio.
+                            </small>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Estatus</label>
+                            <select formControlName="estatus">
+                                <option value="">Seleccione un estatus</option>
+                                <option value="activo">Activo</option>
+                                <option value="inactivo">Inactivo</option>
+                            </select>
+                            <small *ngIf="editForm.get('estatus')?.invalid && editForm.get('estatus')?.touched" class="text-danger">
+                                El estatus es obligatorio.
+                            </small>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Fecha de Alta</label>
+                            <input type="datetime-local" formControlName="fecha_alta" />
+                            <small *ngIf="editForm.get('fecha_alta')?.invalid && editForm.get('fecha_alta')?.touched" class="text-danger">
+                                La fecha de alta es obligatoria.
+                            </small>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+        <br>
+        <!-- Botones -->
+        <div class="button-group">
+            <button class="btn-closes" (click)="cerrarWidget()">Cancelar</button>
+            <button class="btn-update" (click)="actualizarORegistrar()" [disabled]="editForm.invalid">
+                {{ nuevoColaborador ? 'Registrar' : 'Actualizar' }}
+            </button>              
+        </div>
+    </div>
+</div>

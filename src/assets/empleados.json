@@ -1,0 +1,42 @@
+[
+    {
+        "id": 2,
+        "nombre_completo": "Juan Pérez",
+        "empresa": "TechCorp",
+        "area": "Desarrollo",
+        "departamento": "TI",
+        "puesto": "Desarrollador Fullstack",
+        "fotografia": "/img/user/nophoto.png",
+        "estatus": "activo"
+    },
+    {
+        "id": 3,
+        "nombre_completo": "María López",
+        "empresa": "InnovaSoft",
+        "area": "Marketing",
+        "departamento": "Publicidad",
+        "puesto": "Community Manager",
+        "fotografia": "/img/user/nophoto.png",
+        "estatus": "activo"
+    },
+    {
+        "id": 4,
+        "nombre_completo": "Carlos Ramírez",
+        "empresa": "DataSolutions",
+        "area": "Analítica",
+        "departamento": "Big Data",
+        "puesto": "Analista de Datos",
+        "fotografia": "/img/user/nophoto.png",
+        "estatus": "inactivo"
+    },
+    {
+        "id": 5,
+        "nombre_completo": "Ana Torres",
+        "empresa": "SoftWareHouse",
+        "area": "Desarrollo",
+        "departamento": "TI",
+        "puesto": "Ingeniera de Software",
+        "fotografia": "/img/user/nophoto.png",
+        "estatus": "activo"
+    }
+]
