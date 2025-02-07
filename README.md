@@ -1,59 +1,134 @@
-# EmpresaWebsite
+# 📦 Proyecto Angular 8 - Gestión de Colaboradores
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 8.
+Este es un sistema web desarrollado en **Angular 8** que permite la gestión de colaboradores en una empresa. Se conecta con un backend vía **Socket.io** para actualizaciones en tiempo real y soporta carga de imágenes en **/storage/colaboradores/{nombre}**.
 
-## Development server
+## 🚀 Requisitos Previos
 
-To start a local development server, run:
+Antes de comenzar, asegúrate de tener instalado:
+
+- **Node.js** (versión 12.x recomendada) - [Descargar aquí](https://nodejs.org/)
+- **Angular CLI 8** - Instalar con:
+
+  ```bash
+  npm install -g @angular/cli@8
+  ```
+
+- **Backend con Socket.io** (debe estar corriendo en `http://localhost:3000`)
+
+## 👅 Instalación
+
+1. **Clonar el repositorio**  
+   ```bash
+   git clone https://github.com/tu-usuario/tu-repositorio.git
+   cd tu-repositorio
+   ```
+
+2. **Instalar dependencias**  
+   ```bash
+   npm install
+   ```
+
+3. **Agregar Bootstrap (si no está instalado)**  
+   ```bash
+   npm install bootstrap
+   ```
+
+   Luego, agrégalo en `angular.json`:
+
+   ```json
+   "styles": [
+     "node_modules/bootstrap/dist/css/bootstrap.min.css",
+     "src/styles.css"
+   ]
+   ```
+
+## ▶️ Cómo Ejecutar el Proyecto
+
+Ejecuta el servidor de desarrollo con:
 
 ```bash
 ng serve
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+Luego abre `http://localhost:4200/` en tu navegador.
 
-## Code scaffolding
+---
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+## ⚡ Funcionalidades Principales
 
-```bash
-ng generate component component-name
+- 📌 **Autenticación:** Permite login y registro de colaboradores.
+- 📝 **Gestión de Colaboradores:** Agregar, editar y eliminar registros.
+- 📡 **Actualización en Tiempo Real:** Integrado con **Socket.io**.
+- 🖼️ **Carga de Imágenes:** Almacena fotos en `/storage/colaboradores/{nombre}`.
+- 🎨 **Interfaz Responsiva:** Estilizada con **Bootstrap**.
+
+---
+
+## 🔧 Configuración de Socket.io
+
+El proyecto se comunica con un servidor en **`http://localhost:3000`**. Para asegurar la conexión:
+
+1. **Verifica que el backend esté en ejecución.**
+2. **Edita `server.service.ts` si necesitas cambiar la URL del servidor.**
+
+```typescript
+this.socket = io("http://localhost:3000", { autoConnect: false });
 ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+---
 
-```bash
-ng generate --help
+## 🐂 Estructura del Proyecto
+
+```
+/src
+  ├── app
+  │   ├── components
+  │   │   ├── menu
+  │   │   ├── login-widget
+  │   │   ├── register-widget
+  │   │   ├── edit-widget
+  │   │   ├── card
+  │   │   ├── index
+  │   ├── services
+  │   │   ├── server.service.ts   # Conexión con Socket.io
+  │   │   ├── global.service.ts   # Manejo de filtros globales
+  │   ├── app.component.ts
+  │   ├── app.routes.ts
+  ├── assets
+  ├── environments
+  ├── styles.css
 ```
 
-## Building
+---
 
-To build the project run:
+## ❓ Problemas Comunes y Soluciones
 
-```bash
-ng build
-```
+🔹 **Error `NG8001: 'app-menu' is not a known element`**
+- Asegúrate de que los componentes están importados en `app.component.ts`:
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+  ```typescript
+  imports: [MenuComponent, IndexComponent]
+  ```
 
-## Running unit tests
+🔹 **Error `Schema validation failed: Data path "" should have required property 'version'`**
+- Edita `angular.json` y asegúrate de que contenga:
 
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+  ```json
+  {
+    "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+    "version": 1
+  }
+  ```
 
-```bash
-ng test
-```
+---
 
-## Running end-to-end tests
+## 👨‍💻 Autor
 
-For end-to-end (e2e) testing, run:
+📌 **Juan** - _Desarrollador Fullstack_  
+📚 [LinkedIn](https://www.linkedin.com/) | 🌐 [Portfolio](https://tu-website.com/)
 
-```bash
-ng e2e
-```
+---
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+## 🐝 Licencia
 
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+Este proyecto está bajo la **MIT License** – puedes usarlo libremente para fines personales y comerciales. 🚀
